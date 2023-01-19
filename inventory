@@ -1,0 +1,9 @@
+[app]
+192.168.10.12
+192.168.10.13
+
+[database]
+192.168.10.11 db_version="12+214ubuntu0.1" db_dir=/opt/pgsql-data
+
+[web]
+192.168.10.11

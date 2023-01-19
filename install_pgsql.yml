@@ -1,0 +1,15 @@
+- name: Install PostgreSQL
+  gather_facts: yes
+  hosts: database
+  tasks:
+  - name: install PostgreSQL package on Debian
+    when: ansible_facts['os_family'] == "Debian"
+    apt:
+      name: 
+        - "postgresql={{ db_version }}"
+        - postgresql-contrib
+      state: present
+  - name: start PostgreSQL
+    service:
+      name: postgresql
+      state: started
